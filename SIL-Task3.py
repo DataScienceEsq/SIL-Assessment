@@ -23,8 +23,8 @@ engine = create_engine('sqlite://', echo=False)
 
 df.to_sql('bibleSource', con=engine)
 
-# Counting Number of Records in the database bibleSource
+# Running SQL Query to Count Number of Records in the database bibleSource
 
 a = engine.execute("SELECT count(*) FROM bibleSource").fetchall()[0][0]
 
-print('Total Number of Records = %d' % a)
+print('Total Number of Records in the bibSource Database = %d' % a)
