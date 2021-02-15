@@ -1,3 +1,14 @@
+'''
+
+This PYTHON program reads in a BibTex file called 'source.bib' and outputs a CSV file called 'out.csv'.
+To run this program, please note the following:
+
+1. The file 'source.bib' needs to be present in your folder or a path needs to provided to the file.
+2. From the command prompt one can run the program using the command python py SIL-Task1&2.py
+
+
+'''
+
 from pybtex.database.input import bibtex
 
 INFILE = 'source.bib'
