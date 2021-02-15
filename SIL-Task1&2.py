@@ -2,10 +2,11 @@
 
 Author: Robert Ferdinand (2021)
 
-This PYTHON program reads in a BibTex file called 'source.bib' and outputs a CSV file called 'out.csv'.
+This PYTHON program parses a BibTex file called 'source.bib' and outputs a CSV file called 'out.csv'.
+
 To run this program, please note the following:
 
-1. The file 'source.bib' needs to be present in your folder or a path needs to provided to the file.
+1. The file 'source.bib' needs to be present in local folder or a path to the file needs to provided in OUTFILE.
 2. From the command prompt one can run the program using the command 'python SIL-Task1&2.py'.
 
 
