@@ -27,4 +27,4 @@ df.to_sql('bibleSource', con=engine)
 
 a = engine.execute("SELECT count(*) FROM bibleSource").fetchall()[0][0]
 
-print('Total Number of Records in the bibSource Database = %d' % a)
+print('Total Number of Records in the bibleSource Database = %d' % a)
