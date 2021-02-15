@@ -1,5 +1,7 @@
 '''
 
+Author: Robert Ferdinand (2021)
+
 This PYTHON program reads in a CSV file 'out.csv' and outputs a database which can be queried using SQL.
 To run this program, please note the following:
 

@@ -1,5 +1,7 @@
 '''
 
+Author: Robert Ferdinand (2021)
+
 This PYTHON program reads in a BibTex file called 'source.bib' and outputs a CSV file called 'out.csv'.
 To run this program, please note the following:
 
@@ -33,8 +35,10 @@ for bib_id in bibdata.entries:
         YEAR = str(b['year'])
         YEAR = YEAR.replace(',','')
         fh.write(str(bib_id)+","+TITLE+","+LGCODE+","+YEAR+"\n")
-    except(KeyError, UnicodeEncodeError):
-        fh.write(str(bib_id)+","+" "+","+" "+","+" "+"\n")
+    except(KeyError):
+        continue
+    except(UnicodeEncodeError):
+        continue
  
 fh.close()
      
