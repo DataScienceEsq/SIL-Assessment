@@ -33,10 +33,8 @@ for bib_id in bibdata.entries:
         YEAR = str(b['year'])
         YEAR = YEAR.replace(',','')
         fh.write(str(bib_id)+","+TITLE+","+LGCODE+","+YEAR+"\n")
-    except(KeyError):
-        continue
-    except(UnicodeEncodeError):
-        continue
+    except(KeyError, UnicodeEncodeError):
+        fh.write(str(bib_id)+","+" "+","+" "+","+" "+"\n")
  
 fh.close()
      
