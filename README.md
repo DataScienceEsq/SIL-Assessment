@@ -1,6 +1,8 @@
 # SIL-Assessment
 Take Home Assessment at SIL
 
+Author: Robert Ferdinand (2021)
+
 This repository contains the following files:
 
 (a) SIL-Task1&2.py: This PYTHON file needs as input the BibTex file 'source.bib' which can be downloaded from the following site:
