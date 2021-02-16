@@ -13,6 +13,7 @@ To run this program, please note the following:
 '''
 
 from pybtex.database.input import bibtex
+from unidecode import unidecode
 
 INFILE = 'source.bib'
 OUTFILE = 'out.csv'
@@ -29,19 +30,24 @@ bibdata = parser.parse_file(INFILE)
 for bib_id in bibdata.entries:
     b = bibdata.entries[bib_id].fields
     try:
-        TITLE = str(b['title'])
+        TITLE = str(unidecode(b['title']))
         TITLE = TITLE.replace(',','')
         TITLE = TITLE.replace('"','')
-        LGCODE = str(b['lgcode'])
+    except(KeyError,UnicodeEncodeError):
+        TITLE = ""
+    try:
+        LGCODE = str(unidecode(b['lgcode']))
         LGCODE = LGCODE.replace(',','')
         LGCODE = LGCODE.replace('"','')
-        YEAR = str(b['year'])
+    except(KeyError, UnicodeEncodeError):
+        LGCODE = ""
+    try:
+        YEAR = str(unidecode(b['year']))
         YEAR = YEAR.replace(',','')
         YEAR = YEAR.replace('"','')
-        fh.write(str(bib_id)+","+TITLE+","+LGCODE+","+YEAR+"\n")
     except(KeyError, UnicodeEncodeError):
-        fh.write(str(bib_id)+","+" "+","+" "+","+" "+"\n")
-        
+        YEAR = ""
+    fh.write(str(bib_id)+","+TITLE+","+LGCODE+","+YEAR+"\n")
  
 fh.close()
      
