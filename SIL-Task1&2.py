@@ -33,21 +33,25 @@ for bib_id in bibdata.entries:
         TITLE = str(unidecode(b['title']))
         TITLE = TITLE.replace(',','')
         TITLE = TITLE.replace('"','')
+        TITLE = TITLE.strip()
     except(KeyError,UnicodeEncodeError):
         TITLE = ""
     try:
         LGCODE = str(unidecode(b['lgcode']))
         LGCODE = LGCODE.replace(',','')
         LGCODE = LGCODE.replace('"','')
+        LGCODE = LGCODE.strip()
     except(KeyError, UnicodeEncodeError):
         LGCODE = ""
     try:
         YEAR = str(unidecode(b['year']))
         YEAR = YEAR.replace(',','')
         YEAR = YEAR.replace('"','')
+        YEAR = YEAR.strip()
     except(KeyError, UnicodeEncodeError):
         YEAR = ""
-    fh.write(str(bib_id)+","+TITLE+","+LGCODE+","+YEAR+"\n")
+    bib_id = str(bib_id).strip()
+    fh.write(bib_id+","+TITLE+","+LGCODE+","+YEAR+"\n")
  
 fh.close()
      
