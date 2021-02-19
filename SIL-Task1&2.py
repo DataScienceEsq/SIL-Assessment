@@ -38,6 +38,9 @@ for bib_id in bibdata.entries:
     except(KeyError,UnicodeEncodeError):
         TITLE = TITLE.split()
         TITLE = ''.join(TITLE)
+        TITLE = TITLE.replace(',','')
+        TITLE = TITLE.replace('"','')
+        TITLE = TITLE.replace("'",'')
         TITLE = TITLE.strip()
     try:
         LGCODE = str(unidecode(b['lgcode']))
@@ -48,6 +51,9 @@ for bib_id in bibdata.entries:
     except(KeyError, UnicodeEncodeError):
         LGCODE = LGCODE.split()
         LGCODE = ''.join(LGCODE)
+        LGCODE = LGCODE.replace(',','')
+        LGCODE = LGCODE.replace('"','')
+        LGCODE = LGCODE.replace("'",'')
         LGCODE = LGCODE.strip()
     try:
         YEAR = str(unidecode(b['year']))
@@ -58,6 +64,9 @@ for bib_id in bibdata.entries:
     except(KeyError, UnicodeEncodeError):
         YEAR = YEAR.split()
         YEAR = ''.join(YEAR)
+        YEAR = YEAR.replace(',','')
+        YEAR = YEAR.replace('"','')
+        YEAR = YEAR.replace("'",'')
         YEAR = YEAR.strip()
     bib_id = str(bib_id).strip()
     fh.write(bib_id+","+TITLE+","+LGCODE+","+YEAR+"\n")
